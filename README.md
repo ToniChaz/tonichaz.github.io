@@ -1,6 +1,11 @@
-# Portfolio Toni Chaz
+# [Portfolio Toni Chaz](httop:www.tonichaz.com)
 
 A simple web application with webpack
+
+### Deploy
+To deploy in master branch push some change in develop branch.
+
+**DO NOT PUSH ON MASTER!!!**
 
 ### Run 
 ```npm start```
