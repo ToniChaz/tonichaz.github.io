@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Pinball</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="description" content="HTML5 Pinball with matter-js and poly-decompJS"/>
+  <meta name="keywords" content="HTML5, Pinball, HTML, retro, game">
+  <meta name="author" content="Toni Chaz">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../favicon.ico">
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Hind');
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      color: #dee2e6;
+      background-color: #212529;
+      font-family: 'Hind', sans-serif;
+      text-transform: uppercase;
+    }
+
+    .container {
+      position: relative;
+      line-height: 0;
+    }
+
+    .score {
+      position: absolute;
+      top: 10px;
+      line-height: 1;
+    }
+
+    .score span {
+      font-size: 3.25rem;
+    }
+
+    .current-score {
+      left: 10px;
+    }
+
+    .high-score {
+      text-align: right;
+      right: 10px;
+    }
+
+    .trigger {
+      appearance: none;
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      bottom: 10px;
+      border: 0;
+      border-radius: 50%;
+      color: inherit;
+      background-color: #e64980;
+      text-align: center;
+      line-height: 80px;
+      font-size: 1.25rem;
+      text-transform: inherit;
+      cursor: pointer;
+      user-select: none;
+      outline: none;
+    }
+
+    .left-trigger {
+      left: 10px;
+    }
+
+    .right-trigger {
+      right: 60px;
+    }
+
+    canvas {
+      overflow: hidden;
+      border-radius: 5px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.75);
+    }
+
+    /* responsive scaling, because pinball tables are tall */
+    @media (min-height: 0px) {
+      .container {
+        transform: scale(0.25);
+      }
+    }
+
+    @media (min-height: 400px) {
+      .container {
+        transform: scale(0.5);
+      }
+    }
+
+    @media (min-height: 600px) {
+      .container {
+        transform: scale(0.75);
+      }
+    }
+
+    @media (min-height: 800px) {
+      .container {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="score current-score">
+    score<br><span></span>
+  </div>
+  <div class="score high-score">
+    high score<br><span></span>
+  </div>
+  <button class="trigger left-trigger">tap!</button>
+  <button class="trigger right-trigger">tap!</button>
+</div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.rawgit.com/schteppe/poly-decomp.js/1ef946f1/build/decomp.min.js"></script>
+<script type="text/javascript" src="https://cdn.rawgit.com/liabru/matter-js/0895d81f/build/matter.min.js"></script>
+<script type="text/javascript" src="https://cdn.rawgit.com/liabru/matter-attractors/c470ed42/build/matter-attractors.min.js"></script>
+<script type="text/javascript" src="pinball.js"></script>
+</body>
+</html>
