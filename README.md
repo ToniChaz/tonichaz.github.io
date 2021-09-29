@@ -1,9 +1,9 @@
-# [Portfolio Toni Chaz](httop:www.tonichaz.com)
+# [Portfolio Toni Chaz](https//:www.tonichaz.com)
 
 A simple web application with webpack
 
 ### Deploy
-To deploy in master branch push some change in develop branch.
+When push on develop, github action executing build and merged in master. Deployed in github pages automatically.
 
 **DO NOT PUSH ON MASTER!!!**
 
@@ -17,4 +17,5 @@ open http://localhost:8080
 
 your source is in **dist/** folder
 
-Some change
+### Todo
+Pdf generate and download. 
