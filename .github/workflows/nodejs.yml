@@ -12,11 +12,11 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [13.x]
+        node-version: [22.x]
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Set Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
@@ -33,13 +33,13 @@ jobs:
       run: npm run build
 
     - name: 'Upload artifact'
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v4
       with:
         name: 'tonichaz_gh.tar.gz'
         path: dist/
 
     - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@releases/v3
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: master
